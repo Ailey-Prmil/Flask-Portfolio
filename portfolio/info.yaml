@@ -1,0 +1,198 @@
+full_name: Lam Mai Tuyen
+jobtitles:
+  - Software Engineer
+  - Web Developer
+  - Data Analyst
+  - Machine Learning Engineer
+about_me: I am a software engineer with a passion for web development, data analysis, and machine learning. I have experience in building web applications, analyzing data, and developing machine learning models. I am always eager to learn new technologies and improve my skills.
+educations:
+  - date: 2018 - 2022
+    school: University of Information Technology
+    description: 
+      - Bachelor of Science in Computer Science
+  - date: 2022 - Present
+    school: Online C
+    description: 
+      - Continuously learning new technologies and improving my skills through online courses and self-study.
+      - Completed courses in web development, data analysis, and machine learning.
+experiences:
+  - date: 2021 - Present
+    title: Software Engineer Intern
+    company: ABC Company
+    #title_tag: Software Engineer
+    skills_included:
+      - Problem Solving
+      - Teamwork
+      - Communication
+      - Python
+      - HTML, CSS, JavaScript
+    description: 
+      - Developed and maintained web applications using React, Node.js, and MongoDB. 
+      - Collaborated with a team of engineers to deliver high-quality software products.
+  - date: 2020 - 2021
+    title: Data Analyst Intern
+    company: XYZ Company
+    #title_tag: Software Engineer
+    skills_included:
+      - Problem Solving
+      - Teamwork
+      - Communication
+      - Python
+      - HTML, CSS, JavaScript
+    description: 
+      - Analyzed customer data to identify trends and insights that could help improve business strategies. Developed data visualizations and reports to communicate findings to stakeholders.
+  - date: 2020 - 2021
+    title: Data Analyst Intern
+    company: XYZ Company
+    #title_tag: Data Analyst
+    skills_included:
+      - Problem Solving
+      - Teamwork
+      - Communication
+      - Python
+      - HTML, CSS, JavaScript
+    description: 
+      - Analyzed customer data to identify trends and insights that could help improve business strategies. Developed data visualizations and reports to communicate findings to stakeholders.
+skills:
+  Soft_Skills:
+    - name: Problem Solving
+      description: I enjoy solving complex problems and finding creative solutions to challenges.
+    - name: Teamwork
+      description: I work well in a team environment and collaborate effectively with others to achieve common goals.
+    - name: Communication
+      description: I can communicate technical concepts clearly and concisely to both technical and non-technical audiences.
+    - name: Time Management
+      description: I am able to prioritize tasks effectively and manage my time efficiently to meet deadlines.
+  Hard_Skills:
+    - name: Python 
+      tag: 
+        - Programming Languages
+        - Data Analysis
+      description: Using Python for Data Analysis, Machine Learning, and Web Development.
+    - name: HTML, CSS, JavaScript 
+      tag: 
+        - Web Development
+      description: Building responsive and interactive web applications using HTML, CSS, and JavaScript.
+    - name: PowerBI
+      tag: 
+        - Data Analysis
+      description: Creating interactive data visualizations and reports using PowerBI.
+    - name: Scikit-learn, TensorFlow, Keras
+      tag: 
+        - Machine Learning
+      description: Developing machine learning models using Scikit-learn, TensorFlow, and Keras.
+    - name: MySQL
+      tag: 
+        - Databases
+      description: Designing and managing relational databases using MySQL.
+    - name: Git
+      tag: 
+        - Tools & Technologies
+      description: Version control and collaboration using Git.
+    - name: Docker
+      tag: 
+        - Tools & Technologies
+      description: Services containerization and deployment  using Docker.
+    - name: Agile Methodologies
+      tag: 
+        - Business Skills
+      description: Working in an Agile environment and following Agile practices.
+    - name: Project Management
+      tag: 
+        - Business Skills
+      description: Managing projects effectively and delivering high-quality software products.
+    - name: MongoDB
+      tag: 
+        - Databases
+      description: Building scalable and flexible databases using MongoDB.
+    - name: AWS
+      tag: 
+        - Tools & Technologies
+      description: Deploying and managing applications on AWS cloud services.
+    - name: SQL
+      tag: 
+        - Databases
+      description: Writing and optimizing SQL queries for data retrieval, manipulation or other administration practices.
+    - name: NoSQL
+      tag: 
+        - Databases
+      description: Designing and managing NoSQL databases for high-performance, high-availability, and scalable applications.
+projects:
+  - title: E-commerce Website
+    date: 2023
+    reference: '#'
+    skills_included:
+      - React
+      - Node.js
+      - MongoDB
+      - User Authentication
+      - Product Search
+    description: Developed a full-stack e-commerce website using React, Node.js, and MongoDB. Implemented features such as user authentication, product search, and shopping cart functionality.
+    details: 
+      - Developed the front-end of the website using React and styled it with CSS.
+      - Built the back-end using Node.js and connected it to a MongoDB database.
+      - Implemented user authentication using JWT tokens and password hashing.
+      - Added product search functionality with filters and sorting options.
+      - Integrated a shopping cart feature to allow users to add and remove items from their cart.
+  - title: Data Analysis Project
+    date: 2022
+    reference: '#'
+    skills_included:
+      - Python
+      - Pandas
+      - Matplotlib
+      - Data Visualization
+    description: Analyzed a dataset of customer reviews using Pandas and Matplotlib. Visualized the data to identify trends and insights that could help improve customer satisfaction.
+    details: 
+      - Cleaned and preprocessed the dataset using Pandas to remove missing values and outliers.
+      - Analyzed the data to identify patterns and trends in customer reviews.
+      - Created visualizations using Matplotlib to present the findings to stakeholders.
+      - Extracted key insights from the data to make recommendations for improving customer satisfaction.
+  - title: Machine Learning Model
+    date: 5/2021
+    reference: '#'
+    skills_included:
+      - Scikit-learn
+      - Model Evaluation
+      - Web Application
+    description: Built a machine learning model to predict customer churn using Scikit-learn. Evaluated the model's performance and implemented it in a web application.
+    details: 
+      - Preprocessed the data and split it into training and testing sets.
+      - Built a machine learning model using Scikit-learn to predict customer churn.
+      - Evaluated the model's performance using metrics such as accuracy, precision, and recall.
+      - Deployed the model in a web application to allow users to input data and get predictions.
+certificates:
+  - title: Python for Data Science
+    date: 2023
+    issuer: Coursera
+    reference: '#'
+  - title: Web Development Bootcamp
+    date: 2023
+    issuer: Udemy
+    reference: '#'
+  - title: Machine Learning Specialization
+    date: 2022
+    issuer: Coursera
+    reference: '#'
+contact:
+  location: Ho Chi Minh City, Vietnam
+  phone: +84 123 456 789
+  email: lammaituyen949@gmail.com
+  facebook: myfacebook
+  github: mygithub
+  linkedin: mylinkedin
+skill_tags:
+  - Programming Languages
+  - Web Development
+  - Data Analysis
+  - Machine Learning
+  - Databases
+  - Tools & Technologies
+  - Business Skills
+config:
+  about_me: true
+  educations: true
+  experiences: true
+  projects: true
+  certificates: false
+  achievements: false

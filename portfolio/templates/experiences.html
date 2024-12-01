@@ -1,0 +1,25 @@
+<h2 class="text-primary text-capitalize">Experience</h2>
+<div class="btn-group-vertical w-100" role="group" aria-label="Position button group">
+    <div class="w-100">
+        {% for experience in experiences %}
+            <div class="card card-body bg-light border-light my-2 container">
+                <div class="row">
+                    <h4 class="col-xs-6 col-md-8 text-secondary pt-2">{{ experience.company }} - {{experience.title}}</h4>
+                    <p class="col-xs-6 col-md-4 text-secondary text-end">{{ experience.date }}</p>
+                </div>
+                <div class="d-flex flex-wrap">
+                    {% for skill in experience.skills_included if not loop.index > 6%}
+                        {% if loop.index == 5 %}
+                            <div class="badge rounded-pill bg-primary-subtle text-primary m-1">+{{ loop.length - 4 }}</div>
+                        {% else %}    
+                            <a class="badge rounded-pill bg-primary-subtle text-primary m-1" href="{{url_for('skills.skill_details', skill=skill)}}">{{ skill }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% for des in experience.description %}
+                    <p class="description">{{ des }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>

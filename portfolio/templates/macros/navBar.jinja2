@@ -1,0 +1,44 @@
+{% macro navBar() %}
+    <nav class="navbar navbar-expand-lg navbar-primary">
+    <div class="container-fluid my-4">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <div class="container d-flex justify-content-center">
+                <div 
+                class="d-flex py-2 border border-primary rounded-pill col-6 collapse">
+                  <ul class="navbar-nav w-100 d-flex justify-content-evenly text-center" style="--bs-navbar-color: var(--bs-primary)">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <img src="/static/sources/about.svg" alt="about-icon"/>   
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/skills" class="nav-link">
+                            <img src="/static/sources/skills.svg" alt="skills-icon"/> 
+                            Skills
+                        </a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a href="/projects" class="nav-link">
+                            <img src="/static/sources/projects.svg" alt="projects-icon"/> 
+                            Projects
+                        </a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a href="/contact" class="nav-link">
+                            <img src="/static/sources/contact.svg" alt="contact-icon"/>
+                            Contact
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+    </nav>
+{% endmacro %}

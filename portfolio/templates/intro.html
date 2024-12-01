@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="grid-wrapper">
+        <div class="g-col-3 d-flex justify-content-end">
+            <img src="/static/sources/profile.svg" class="img-fluid" alt="profile-avatar">
+        </div>
+        <div class="g-col-9 d-flex flex-column align-items-baseline ps-4">
+            <h1 class="text-primary display-1 playfair-display-font-name" style="font-weight: 900">
+                {{full_name}}
+            </h1>
+            <h4 class="text-secondary">
+                {{ jobtitles | join(', ') }}
+            </h4>
+        </div>
+    </div>
+    <div class="grid-wrapper">
+        {% if config.about_me %}         
+            <div class="me-20">
+                <h2 class="text-primary">About Me</h2>
+                <p class="bg-primary-subtle rounded-3 px-4 py-3">
+                    {{ about_me }}
+                </p>
+            </div>
+        {% endif %}
+        <div class="content" data-bs-spy="scroll" data-bs-target="#outline" data-bs-offset="0" tabindex="0">
+            {% for section, value in config.items() if value %}
+                <div id="{{section}}"></div>
+                <div class="{{section}} content-box">
+                    {% set filename = "%s.html"|format(section) %}
+                    {% include filename ignore missing with context %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="outline-box-container">
+            <div class="outline-box">
+                <div id="outline" class="list-group gap-2">
+                    {% for section, value in config.items() if value %}
+                        <a class="list-group-item list-group-item-action scroll-btn" href="#{{section}}">{{section|title}}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+    
+{% endblock  %}

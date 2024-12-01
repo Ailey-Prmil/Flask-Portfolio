@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ skill }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-uppercase fw-bolder text-primary-emphasis">{{ skill }}</h1>
+        <p>{{ skill_data.description }}</p>
+        {% for section, data in extra.items()  %}
+            <hr>
+            <h3 class="text-uppercase text-primary">{{ section }}</h3>
+            <div>
+                {% for line in data  %}
+                    <div class="row mx-sm-5">
+                        <p class="text-secondary col-sm-3">{{line.date}}</p>
+                        <p class="col-sm-9 fs-6">{{line.title}} <span class="badge bg-info-subtle text-dark mx-2">{{line.company}}</span></p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
+
+# In Development

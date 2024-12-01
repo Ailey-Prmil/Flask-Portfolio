@@ -1,0 +1,31 @@
+{% for title in jobtitles %}                    
+<div class="w-100">
+    <button class="btn btn-outline-primary w-100 fs-4 my-1 toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#Title{{ loop.index }}" aria-expanded="false" aria-controls="Education{{ loop.index }}">
+    {{ title }}
+    </button>
+    <div class="collapse" id="Title{{ loop.index }}">
+        <div class="card card-body bg-light border-light my-1 container">
+            {% for experience in experiences %}
+                {% if experience.title_tag == title %}      
+                    <div class="row">
+                        <h4 class="col-xs-6 col-md-8 text-secondary pt-3">{{ experience.company }} - {{experience.title}}</h4>
+                        <p class="col-xs-6 col-md-4 text-secondary text-end">{{ experience.date }}</p>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        {% for skill in experience.skills_included if not loop.index > 6%}
+                            {% if loop.index == 5 %}
+                                <div class="badge rounded-pill bg-primary-subtle text-primary m-1">+{{ loop.length - 4 }}</div>
+                            {% else %}    
+                                <a class="badge rounded-pill bg-primary-subtle text-primary m-1" href="{{url_for('skills.skill_details', skill=skill)}}">{{ skill }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% for des in experience.description %}
+                        <p class="description">{{ des }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,24 @@
+<h2 class="text-primary text-capitalize">Education</h2>
+
+<div class="btn-group-vertical w-100" role="group" aria-label="Vertical button group">
+    {% for education in educations %}                      
+    <div class="w-100">
+        <p class="mt-3 mb-1">{{ education.date }}</p>
+        <button class="btn btn-outline-primary w-100 fs-4 toggle-btn" 
+            type="button"
+            data-bs-toggle="collapse" 
+            data-bs-target="#Education{{ loop.index }}" 
+            aria-expanded="false"
+            aria-controls="Education{{ loop.index }}">
+            {{ education.school }}
+        </button>
+        <div class="collapse" id="Education{{ loop.index }}">
+            <div class="card card-body my-1">
+                {% for des in education.description %}
+                <p class="description">{{ des }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

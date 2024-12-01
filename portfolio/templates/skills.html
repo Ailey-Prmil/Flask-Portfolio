@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="soft-skill card m-4">
+        <h2 class="card-header text-primary border-primary"> Soft Skills</h2>
+        <ul class="list-group list-group-flush card-body">
+            {% for skill in skills.Soft_Skills %}
+                <li class="list-group-item">
+                <div class="card-title fw-bold"> {{skill.name}} </div>
+                <p class="card-text"> {{skill.description}} </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="hard-skills card m-4">
+        <h2 class="card-header text-primary border-primary ">Hard Skills</h2>
+        <div class="card-body containe mx-3">
+            {% for skill_set in skill_tags  %}
+                <h4 class="text-secondary mt-3"> {{skill_set}} </h4>
+                <div class="row gy-3">
+                    {% for skill in skills.Hard_Skills %}
+                        {% set url_tag =  (skill.name)| urlencode %}
+                        {% if skill_set in skill.tag %}
+                        <div class="col-md-3">
+                            <div class="card card-body border-primary h-100 rounded">
+                                <a class="card-title fw-bold" href="./{{ url_tag }}"> {{skill.name}} </a>
+                                <p class="card-text"> {{skill.description}} </p>
+                            </div>                    
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock  %}
+

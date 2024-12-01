@@ -1,0 +1,60 @@
+about_me: I am a software developer.
+achievements:  # for later
+certificates: null # for later
+config:
+  about_me: true
+  achievements: false
+  certificates: false
+  educations: true
+  experiences: true
+  projects: true
+contact:
+  email: test
+  facebook: test
+  github: test
+  linkedin: test
+  location: test
+  phone: test
+educations:
+- date: 2015-2019
+  school: University of California
+  description:
+  - Studied computer science
+- date: 2015-2019
+  school: Universiddddddty of California
+  description:
+  - Studied computer science
+experiences: null
+full_name: I am a software developer.
+jobtitles:
+- '9'
+- '10'
+- '9'
+- '10'
+- '9'
+- '10'
+projects: null
+skill_tags: null
+skills:
+  Hard_Skills:
+  - name: Python
+    description: Python programming language
+    tag: Programming
+  - name: Java
+    description: Java programming language
+    tag: Programming
+  - name: Python
+    description: Python programming language
+    tag: Programming
+  - name: Java
+    description: Java programming language
+    tag: Programming
+  Soft_Skills:
+  - name: Teamwork
+    description: Ability to work in a team
+  - name: Problem Solving
+    description: Ability to solve problems
+  - name: Teamwork
+    description: Ability to work in a team
+  - name: Problem Solving
+    description: Ability to solve problems

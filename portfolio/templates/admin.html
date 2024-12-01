@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% set CONFIG_ITEMS = ["about_me", "educations", "experiences", "projects", "certificates","achievements"] %}
+
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="{{ url_for('static', filename='images/admin.png') }}">
+      <title>Mai Tuyen{% block title %} Portfolio{% endblock %}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </head>
+  <main>
+      <div class="p-3">
+        <div class="admin-form">
+          <h1 class="text-primary display-3 fw-bold my-1">EDITOR</h1>
+          <div class="row">
+            <form class="" id="name">
+              <label for="inputName" class="col-sm-2 col-form-label fw-bold">Full Name</label>
+              <input type="text" class="form-control" id="inputName" placeholder="{{full_name}}" disabled>
+            </form>
+
+
+          </div>
+            <form class="row" id="name">
+              <div class="col-sm-5 hstack gap-2">
+                <button class="btn btn-primary" id="edit-btn" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24"><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M7 7H6a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-1"/><path d="M20.385 6.585a2.1 2.1 0 0 0-2.97-2.97L9 12v3h3zM16 5l3 3"/></g></svg>
+                </button>
+                <button class="btn btn-success" id="accept-btn" type="submit" disabled>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 2048 2048"><path fill="#fff" d="m1902 196l121 120L683 1657L25 999l121-121l537 537z"/></svg>                
+                </button>
+                <button class="btn btn-danger" id="discard-btn" type="button" disabled>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="#fff" d="m2.397 2.554l.073-.084a.75.75 0 0 1 .976-.073l.084.073L8 6.939l4.47-4.47a.75.75 0 1 1 1.06 1.061L9.061 8l4.47 4.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-.976.073l-.084-.073L8 9.061l-4.47 4.47a.75.75 0 0 1-1.06-1.061L6.939 8l-4.47-4.47a.75.75 0 0 1-.072-.976l.073-.084z"/></svg>                
+                </button>
+              </div>
+            <div class="col-sm-5">
+              <button class="btn btn-primary" for="inputImage">Upload profile image
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 24 24"><path fill="#fff" d="M11 16V7.85l-2.6 2.6L7 9l5-5l5 5l-1.4 1.45l-2.6-2.6V16zm-5 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>
+                <input type="file" class="form-control-file" id="inputImage" style="display: none;" aria-label="">
+              </button> 
+            </div>
+          </form>
+          <form class="row" id="jobtitles">
+            <label for="inputTitles" class="col-sm-2 col-form-label fw-bold">Job Titles</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputTitles" placeholder="Split by semicolon ;">
+            </div>
+            <button class="btn btn-success col-sm-1"  type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 2048 2048"><path fill="#fff" d="m1902 196l121 120L683 1657L25 999l121-121l537 537z"/></svg>                
+            </button>
+          </form>
+          <div class="form-group row">
+            <label for="inputSkillTags" class="col-sm-2 col-form-label fw-bold">Tags for Hard Skills</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputSkillTags" placeholder="Split by semicolon ;">
+            </div>
+          </div>
+        
+          <div class="form-group row">
+            <div class="col-sm-12 fw-bold">Configuration</div>
+            {% for item in CONFIG_ITEMS %}
+              <div class="col-lg-4">
+                <div class="form-check">
+                  <input class="form-check-input border-primary" type="checkbox" id="{{ item }}">
+                  <label class="form-check label" for="{{ item }}">
+                    {{ item|replace("_", " ")|title() }}
+                  </label>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="py-2">
+            <h2 class="text-primary my-2">Skills Section</h2>
+            <div class="col-sm-12">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#addSkillSection" aria-expanded="false" aria-controls="addSkillSection">Add new skill
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#fff" d="M11 17h2v-4h4v-2h-4V7h-2v4H7v2h4zm1 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
+              </button>
+            </div>
+            <div class="form-group row collapse bg-light rounded px-2" id="addSkillSection">
+              <div>
+                <label for="inputSkillName" class="col-sm-2 col-form-label fw-bold">Skill Name</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputSkillName" placeholder="Skill Name" required>
+                </div>
+              </div>
+              <div class="col-sm-8 skill-type-check">
+                <div class="form-check form-check-inline">                  
+                  <input class="form-check-input border-primary" type="radio" name="Skill_Type" id="Soft_Skill" value="Soft_Skill">
+                  <label class="form-check-label" for="Soft_Skill">
+                    Soft Skill
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input border-primary" type="radio" name="Skill_Type" id="Hard_Skill" value="Hard_Skill">
+                  <label class="form-check-label" for="Hard_Skill">
+                    Hard Skill
+                  </label>
+                </div>
+              </div>
+              <div>
+                <label for="inputSkillDescription" class="col-sm-2 col-form-label fw-bold">Skill Level</label>
+                <div class="col-sm-10">
+                  <textarea class="form-control" id="inputSkillDescription" rows="3" placeholder="Skill Description"></textarea>
+                </div>
+              </div>
+              <button class="btn btn-primary col-sm-1 mx-2" type="button" id="Save_skill">Save</button>
+            </div>
+  
+              
+            </div>
+        </div>
+
+      </div>
+    </div>
+        
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="{{url_for('static', filename='script/admin.js')}}"></script>
+
+</html>
